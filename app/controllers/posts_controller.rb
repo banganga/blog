@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /posts
   # GET /posts.json
   def index
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
 		@post = Post.find(params[:id])
+    @post.views_count == views_count + 2
   end
 
   # GET /posts/new

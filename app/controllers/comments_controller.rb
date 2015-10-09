@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(comment_params)
 			redirect_to post_path(@post)
+		@comments.comments_count == comments_count + 10
 	end
 	def destroy
     @post = Post.find(params[:post_id])

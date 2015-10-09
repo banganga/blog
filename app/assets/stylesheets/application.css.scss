@@ -17,9 +17,27 @@
 body {
 	width: 1024px;
 	margin: 0 auto;
+	border: 2px solid;
+}
+body h1 {
+	font-size: 34;
+	margin-top: 0;	
 }
 .p_date {
 	width: 510px;
+	float: left;
 }
-
+.notice, .alert {
+	margin: 0;
+	padding:0;
+	height: 10px;
+}
+.navbar {
+	margin-bottom: 5px;
+}
+section.popular_posts {
+	border: 1px solid #333;
+	width: 510px;
+	float: right;
+}
 

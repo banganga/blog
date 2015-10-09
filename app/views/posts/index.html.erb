@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
 <header>
 	<%= render 'nav' %>
 </header>
 <body>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 	<section class="p_date">
 			<h1>Main header of blog</h1>
 			<%= link_to 'New Post', new_post_path %>
@@ -27,16 +28,23 @@
 						</tr>
 					<% end %>
 				</tbody>
-			</table>
-			<br>
-			<div>
-				<h2>tttt
-					
-				</h2>
-			</div>
+			</table>			
 	</section>
 	<section class = "popular_posts">
 		<h2>Popular posts</h2>
+		<table class="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Body</th>
+						<th colspan="3"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<%= Post.order(popularity: :desc).first(10) %>
+				</tbody>
+			</table>			
 	</section>
 </body>
 
