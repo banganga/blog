@@ -37,6 +37,12 @@
 	</section>
 	<section class = "popular_posts">
 		<h2>Popular posts</h2>
+		<%= form_for :comment, url: post_comments_path(post_id: @post) do |f| %>
+        <div class = "form-group" >
+			<%= f.label :content, 'New comment' %>
+          	<%= f.text_area :content, class: 'form-control' %>
+        	<%= f.submit 'Leave comment', class: 'btn btn-primary' %>
+        </div>
 	</section>
 </body>
 
