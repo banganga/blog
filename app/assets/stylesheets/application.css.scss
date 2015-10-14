@@ -14,12 +14,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "posts";
 body {
 	width: 1024px;
 	margin: 0 auto;
 }
-.p_date {
-	width: 510px;
-}
+
 
 

@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20151009123447) do
     t.text     "body"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "views_count", default: 0
-    t.integer  "comments_count", default: 0
-    t.integer  "popularity", default: 0
+    t.integer  "views_count"
+    t.integer  "comments_count"
+    t.integer  "popularity"
   end
 
   add_index "posts", ["popularity"], name: "index_posts_on_popularity"

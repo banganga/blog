@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(page: params[:page]).order(created_at: :desc)
+    @posts = Post.paginate(page: params[:page]).order(created_at: :asc)
     @popular_posts = Post.order(popularity: :desc).first(5)
   end
 
@@ -13,8 +13,8 @@ class PostsController < ApplicationController
   def show
 		@post = Post.find_by(id: params[:id])
     if @post
-      return if session["post_#{@post.id}"]  # пусть будем считать 1 просмотр
-      session["post_#{@post.id}"] = @post.id # за сессию
+      #return if session["post_#{@post.id}"]   пусть будем считать 1 просмотр
+      #session["post_#{@post.id}"] = @post.id # за сессию
       @post.increase_views
     else
       flash[:danger] = 'Post not found'

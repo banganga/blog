@@ -28,21 +28,31 @@
 					<% end %>
 				</tbody>
 			</table>
-			<br>
-			<div>
-				<h2>tttt
-					
-				</h2>
-			</div>
 	</section>
 	<section class = "popular_posts">
-		<h2>Popular posts</h2>
-		<%= form_for :comment, url: post_comments_path(post_id: @post) do |f| %>
-        <div class = "form-group" >
-			<%= f.label :content, 'New comment' %>
-          	<%= f.text_area :content, class: 'form-control' %>
-        	<%= f.submit 'Leave comment', class: 'btn btn-primary' %>
-        </div>
+			<h2>Order by popularity</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Body</th>
+						<th>popularity index</th>
+						<th colspan="3"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @popular_posts.each do |post| %>
+						<tr>
+							<td><%= post.title %></td>
+							<td><%= post.body %></td>
+							<td><%= post.popularity %></td>
+							<td><%= link_to 'Show', post %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<br>
 	</section>
 </body>
 
