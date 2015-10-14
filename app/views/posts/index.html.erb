@@ -28,23 +28,49 @@
 						</tr>
 					<% end %>
 				</tbody>
+<<<<<<< HEAD
 			</table>			
 	</section>
 	<section class = "popular_posts">
 		<h2>Popular posts</h2>
 		<table class="table">
+=======
+			</table>
+	</section>
+	<section class = "popular_posts">
+			<h2>Order by popularity</h2>
+			<table class="table">
+>>>>>>> popularity
 				<thead>
 					<tr>
 						<th>Title</th>
 						<th>Body</th>
+<<<<<<< HEAD
+=======
+						<th>popularity index</th>
+>>>>>>> popularity
 						<th colspan="3"></th>
 					</tr>
 				</thead>
 
 				<tbody>
+<<<<<<< HEAD
 					<%= Post.order(popularity: :desc).first(10) %>
 				</tbody>
 			</table>			
+=======
+					<% @popular_posts.each do |post| %>
+						<tr>
+							<td><%= post.title %></td>
+							<td><%= post.body %></td>
+							<td><%= post.popularity %></td>
+							<td><%= link_to 'Show', post %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<br>
+>>>>>>> popularity
 	</section>
 </body>
 

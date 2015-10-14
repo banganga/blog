@@ -4,3 +4,9 @@
 .popular_posts {
 	width: 400px;
 }
+.p_date {
+	width: 510px;
+}
+.popular_posts, .p_date {
+	display: inline-block;
+}
