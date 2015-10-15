@@ -11,7 +11,4 @@ class Post < ActiveRecord::Base
 		self.update(popularity: pop)
 	end
 end
-class Popularity < ActiveRecord::Base
-	popularity :integer
-	popularity == post.views_count + comments.comments_count
-end
+

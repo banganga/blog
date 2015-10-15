@@ -11,10 +11,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-<<<<<<< HEAD
-		@post = Post.find(params[:id])
-    @post.views_count == views_count + 2
-=======
 		@post = Post.find_by(id: params[:id])
     if @post
       #return if session["post_#{@post.id}"]   пусть будем считать 1 просмотр
@@ -24,7 +20,6 @@ class PostsController < ApplicationController
       flash[:danger] = 'Post not found'
       redirect_to root_path
     end
->>>>>>> popularity
   end
 
   # GET /posts/new
